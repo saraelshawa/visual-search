@@ -12,9 +12,8 @@ function [] =visual_search()
         RT_feat = [];
         n = 6; 
         numberOfOnes = n/2;
-        % Get a list of random locations, with no number repeating.
-        indexes = randperm(n);
-        x = zeros(1, n); % Start off with all zeros.
+        indexes = randperm(n); 
+        x = zeros(1, n); % start off with all zeros.
         x(indexes(1:numberOfOnes)) = 1; % half of them, at random, are 1
        
 
@@ -26,14 +25,14 @@ function [] =visual_search()
              
             while i < set_size
                 p = (0.9-0.1).*rand(4,2);
-                axis([0 1 0 1]) %set x and y axis range 0 to 1
-                plot(p(3,1), p(3,2),'ob', 'MarkerSize',10); %blue o always point
-                plot(p(4,1), p(4,2), 'xb', 'MarkerSize',10); % blue x point always here
+                axis([0 1 0 1]) 
+                plot(p(3,1), p(3,2),'ob', 'MarkerSize',10); %blue o point
+                plot(p(4,1), p(4,2), 'xb', 'MarkerSize',10); % blue x point  
                 i = i+1;
             end
             if x(trial)
                 plot(p(2,1), p(2,2),'or', 'MarkerSize',10); %red o point // target is here 
-                plot(p(4,1), p(4,2), 'xb', 'MarkerSize',10); % blue x to keep same number of o and x
+                plot(p(4,1), p(4,2), 'xb', 'MarkerSize',10); % blue x to control for number
 
 
             end
@@ -81,15 +80,15 @@ function [] =visual_search()
             i=1;
             while i < set_size
                 p = (0.9-0.1).*rand(4,2);
-                axis([0 1 0 1]) %set x and y axis range 0 to 1
-                plot(p(3,1), p(3,2),'ob', 'MarkerSize',10); %blue o always point
-                plot(p(4,1), p(4,2), 'xb', 'MarkerSize',10); % blue x point always here
-                plot(p(1,1), p(1,2),'xr','MarkerSize',10); %red x point// second distraction
+                axis([0 1 0 1]);
+                plot(p(3,1), p(3,2),'ob', 'MarkerSize',10); %blue o point
+                plot(p(4,1), p(4,2), 'xb', 'MarkerSize',10); % blue x point 
+                plot(p(1,1), p(1,2),'xr','MarkerSize',10); %red x point // second distraction
                 i = i+1;
             end
             if x(trial)
                 plot(p(2,1), p(2,2),'or', 'MarkerSize',10); %red o point // target is here 
-                plot(p(4,1), p(4,2), 'xb', 'MarkerSize',10); % blue x to keep same number of o and x
+                plot(p(4,1), p(4,2), 'xb', 'MarkerSize',10); 
 
 
             end
