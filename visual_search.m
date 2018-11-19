@@ -3,6 +3,14 @@ function [] =visual_search()
     plotting_matrix_conj = [];
     set_size_list = [4 8 12 16];
     
+    figure;
+    hold on;
+    txt ="Press 'Y' if you see the red o, 'N' if you do not";
+    text(0.2,0.5,txt)
+    pause
+    hold off;
+    
+    
     for i=1:length(set_size_list)
         set_size = set_size_list(i);
 
